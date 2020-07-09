@@ -1,0 +1,46 @@
+{
+	"env": {
+			"es2020": true,
+			"node": true,
+			"jest": true
+	},
+	"extends": [
+		"standard",
+		"plugin:@typescript-eslint/recommended",
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+			"ecmaVersion": 11,
+			"sourceType": "module"
+	},
+	"plugins": [
+			"@typescript-eslint",
+			"prettier"
+	],
+	"rules": {
+		"prettier/prettier": "error",
+		"class-methods-use-this":"off", // verificar melhor se vai querer essa configuração
+		"@typescript-eslint/camelcase": "off", // acho que pode ficar sem, pois isso é para ignorar o padrão de definição de nome de variável ter que ser no estilo nomeVariavel
+		"@typescript-eslint/no-unused-vars": ["error", { // para ele não marcar como erro, quando definirmos uma variável que não vamos utilizar, com essa configuação, quando isso ocorrer é só colocar o nome da variável começando com underline _
+			"argsIgnorePattern": "_"
+		}],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never"
+			}
+		]
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
+}

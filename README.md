@@ -1,0 +1,1 @@
+Setup para app NodeJS (typescript, ESLint, Prettier, Jest, Babel)
