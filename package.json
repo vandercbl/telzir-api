@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.23"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -33,9 +35,9 @@
     "typescript": "^3.9.6"
   },
   "scripts": {
-		"build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-		"start": "node dist/server.js",
-		"dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts",
     "test": "jest"
   }
 }
