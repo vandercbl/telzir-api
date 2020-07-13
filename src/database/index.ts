@@ -1,12 +1,12 @@
+import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-mongoose.connect(
-  'mongodb+srv://telzir_user:mXf4nY9FTKTCnqQh@telzir-api.wlqir.gcp.mongodb.net/dbTelzir?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  },
-)
+dotenv.config()
+
+mongoose.connect(process.env.DB_CONNECT, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+})
 
 export default mongoose
