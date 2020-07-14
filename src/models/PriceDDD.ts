@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import testRouter from '../routes/test.routes'
 
 const PriceDDDSchema = new mongoose.Schema({
   origin: {
