@@ -5,11 +5,9 @@ import PlansController from '../controllers/PlansController'
 
 const planRouter = Router()
 
-planRouter.use(authMiddleware)
-
 planRouter.get('/', PlansController.all)
-planRouter.post('/', PlansController.add)
-planRouter.delete('/:id', PlansController.delete)
-planRouter.put('/:id', PlansController.update)
+planRouter.post('/', authMiddleware, PlansController.add)
+planRouter.delete('/:id', authMiddleware, PlansController.delete)
+planRouter.put('/:id', authMiddleware, PlansController.update)
 
 export default planRouter
