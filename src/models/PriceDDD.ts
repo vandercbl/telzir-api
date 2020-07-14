@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import testRouter from '../routes/test.routes'
 
 const PriceDDDSchema = new mongoose.Schema({
   origin: {
@@ -16,11 +17,14 @@ const PriceDDDSchema = new mongoose.Schema({
 })
 
 // O mongoDB não tem um tipo de dados para monetários. Sendo assim a orientação é para armarzenar em centevos, então quando recuperamos o valor, dividiamos por 100 e quando setamos um novo valor, multiplcamos por 100
+PriceDDDSchema.set('toObject', { getters: true })
+PriceDDDSchema.set('toJSON', { getters: true })
 PriceDDDSchema.path('price').get(function (num) {
   return (num / 100).toFixed(2)
 })
 
 PriceDDDSchema.path('price').set(function (num) {
+  console.log(num)
   return num * 100
 })
 
