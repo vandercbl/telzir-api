@@ -43,7 +43,7 @@ class PlansController {
     const planAlt = req.body
     try {
       const rows = await Plan.updateOne({ _id: id }, planAlt)
-      if (rows.nModified < 1) {
+      if (rows.n < 1) {
         return res
           .status(400)
           .json({ rows, message: 'Nenhum plano foi alterado' })

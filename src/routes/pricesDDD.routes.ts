@@ -9,5 +9,7 @@ priceDDDRouter.use(authMiddleware)
 
 priceDDDRouter.get('/', PricesDDDController.all)
 priceDDDRouter.post('/', PricesDDDController.add)
+priceDDDRouter.delete('/:id', PricesDDDController.delete)
+priceDDDRouter.put('/:id', PricesDDDController.update)
 
 export default priceDDDRouter
