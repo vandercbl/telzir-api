@@ -45,10 +45,10 @@ class UsersController {
 
     const user = await User.findOne({ email }).select('+password')
 
-    if (!user) return res.status(400).json({ message: 'Usuário não existe' })
+    if (!user) return res.status(200).json({ message: 'Usuário não existe' })
 
     if (!(await bcrypt.compare(password, user.password)))
-      return res.status(400).json({ message: 'Senha inválida' })
+      return res.status(200).json({ message: 'Senha inválida' })
 
     user.password = undefined
 
